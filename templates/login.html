@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Login Page{% endblock %}
+
+{% block content %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for msg in messages %}
+<p>{{msg}}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<form action="http://127.0.0.1:5000/login" method="post">
+    <div class="mb-3" style="margin-left:30%; margin-right:30%">
+        <label for="exampleFormControlInput1" class="form-label"
+               style="margin-bottom: 15px; margin-top: 15px">Login</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1"
+               placeholder="login" name="login">
+    </div>
+    <div class="mb-3" style="margin-left:30%; margin-right:30%">
+        <label for="exampleFormControlInput1" class="form-label">Password</label>
+        <input type="password" class="form-control" placeholder="password" name="password">
+    </div>
+    <div style="margin-left:30%">
+        <input class="btn btn-primary" type="submit" value="Login">
+    </div>
+</form>
+<a class="nav-link" href="/register" style="margin-left:30%; margin-top:2%">Create your account</a>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Login Page{% endblock %}
+
+{% block content %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for msg in messages %}
+<p>{{msg}}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<table class="table table-dark table-hover">
+    <tbody>
+    {% for book in cart %}
+    <tr>
+        <th scope="row"><img src="{{book.cover}}" style="width:100px;height:120px;"></th>
+        <td width=20% align="center">
+            <div>Title: {{book.title}}</div>
+            <div>Author: {{book.author}}</div>
+            <div>Genre: {{book.genre}}</div>
+            <div>Price: {{book.price}}$</div>
+        </td>
+        <td align="center">{{book.description}}</td>
+        <td>
+            <form action="http://127.0.0.1:5000/cart/delete" method="POST">
+                <div>
+                    <input type="hidden" class="form-control" name="id" value={{ book.id }}>
+                    <input class="btn btn-primary" type="submit" value="Remove from cart"
+                           style="margin-top:10%; background-color:red">
+                </div>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% if sum == 0 %}
+<p style="margin-left:50%; margin-top:2%">Your shopping cart is empty</p>
+{% else %}
+<div style="margin-left: 14%">Summary: {{ sum }} $</div>
+{% endif %}
+{% endblock %}

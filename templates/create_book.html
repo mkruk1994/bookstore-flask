@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for msg in messages %}
+<p style="margin-left:20%; margin-top:2%">{{msg}}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<form action="http://127.0.0.1:5000/book/create" method="POST">
+    <div class="mb-3" style="margin-left:20%; margin-right:30%">
+        <label for="exampleFormControlInput1" class="form-label" style="margin-bottom: 15px; margin-top: 15px">Book
+            title</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1"
+               placeholder="Clean Code: A Handbook of Agile Software Craftsmanship - example" name="title">
+    </div>
+    <div class="mb-3" style="margin-left:20%; margin-right:30%">
+        <label for="exampleFormControlInput1" class="form-label">Author</label>
+        <input type="text" class="form-control" placeholder="Robert C. Martin - example" name="author">
+    </div>
+    <div class="mb-3" style="margin-left:20%; margin-right:30%">
+        <label for="exampleFormControlInput1" class="form-label">Genre</label>
+        <input type="text" class="form-control" placeholder="Information Technology - example" name="genre">
+    </div>
+    <div class="mb-3" style="margin-left:20%; margin-right:30%">
+        <label for="exampleFormControlInput1" class="form-label">Price</label>
+        <input type="text" class="form-control" placeholder="54.22 - example" name="price">
+    </div>
+    <div class="mb-3" style="margin-left:20%; margin-right:30%">
+        <label for="exampleFormControlInput1" class="form-label">Cover</label>
+        <input type="text" class="form-control"
+               placeholder="https://m.media-amazon.com/images/I/41xShlnTZTL._AC_UF1000,1000_QL80_.jpg - example"
+               name="cover">
+    </div>
+    <div class="mb-3" style="margin-left:20%; margin-right:30%">
+        <label for="exampleFormControlInput1" class="form-label">Description</label>
+
+        <textarea class="form-control" rows="3"
+                  placeholder="Even bad code can function. But if code isn't clean, it can bring a development organization to its knees."
+                  name="description"></textarea>
+    </div>
+    <div style="margin-left:20%">
+        <input class="btn btn-primary" type="submit" value="Create book">
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Update book{% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for msg in messages %}
+<p>{{msg}}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<table class="table table-dark table-hover">
+    <tbody>
+    {% for user in users %}
+    <tr>
+        <td width=25% align="center">
+            <div>Id: {{user.id}}</div>
+        </td>
+        <td width=25% align="center">
+            <div>Login: {{user.login}}</div>
+        </td>
+        <td width=25% align="center">
+            <div>Role: {{user.role}}</div>
+            <div class="col-md-3">
+                <form action="http://127.0.0.1:5000/user/panel" method="POST">
+                    <select class="form-select" id="validationCustom04" name="role" required style="width: 120%">
+                        <option selected disabled value="">{{ user.role }}</option>
+                        <option>user</option>
+                        <option>admin</option>
+                    </select>
+                    <div>
+                        <input type="hidden" class="form-control" name="id" value={{ user.id }}>
+                        <input class="btn btn-primary" type="submit" value="Set user role"
+                               style="background-color:green">
+                    </div>
+                </form>
+            </div>
+        </td>
+        </td>
+        <td width=25% align="center">
+            <form action="http://127.0.0.1:5000/user/delete" method="POST">
+                <div>
+                    <input type="hidden" class="form-control" name="id" value={{ user.id }}>
+                    <input class="btn btn-primary" type="submit" value="Delete user" style="background-color:red">
+                </div>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Update book{% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for msg in messages %}
+<p>{{msg}}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<form action="http://127.0.0.1:5000/book/update" method="POST">
+    <div class="mb-3" style="margin-left:20%; margin-right:30%">
+        <label for="exampleFormControlInput1" class="form-label" style="margin-bottom: 15px; margin-top: 15px">Book
+            title</label>
+        <input type="hidden" class="form-control" name="id" value={{ book.id }}>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="title" value="{{ book.title}}">
+    </div>
+    <div class="mb-3" style="margin-left:20%; margin-right:30%">
+        <label for="exampleFormControlInput1" class="form-label">Author</label>
+        <input type="text" class="form-control" name="author" value="{{ book.author }}">
+    </div>
+    <div class="mb-3" style="margin-left:20%; margin-right:30%">
+        <label for="exampleFormControlInput1" class="form-label">Genre</label>
+        <input type="text" class="form-control" name="genre" value="{{ book.genre }}">
+    </div>
+    <div class="mb-3" style="margin-left:20%; margin-right:30%">
+        <label for="exampleFormControlInput1" class="form-label">Price</label>
+        <input type="text" class="form-control" name="price" value="{{ book.price }}">
+    </div>
+    <div class="mb-3" style="margin-left:20%; margin-right:30%">
+        <label for="exampleFormControlInput1" class="form-label">Cover</label>
+        <input type="text" class="form-control" name="cover" value="{{ book.cover }}">
+    </div>
+    <div class="mb-3" style="margin-left:20%; margin-right:30%">
+        <label for="exampleFormControlInput1" class="form-label">Description</label>
+
+        <textarea class="form-control" rows="3" name="description">{{ book.description }}</textarea>
+    </div>
+    <div style="margin-left:20%">
+        <input class="btn btn-primary" type="submit" value="Update book" style="background-color: orange">
+    </div>
+</form>
+{% endblock %}
