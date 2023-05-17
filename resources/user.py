@@ -49,6 +49,7 @@ class UsersOperations(MethodView):
         user = UserModel.query.filter_by(id=user_id).first()
         user.role = role
         db.session.commit()
+        flash("Role has been changed")
         return redirect(url_for("users.UsersOperations"))
 
 

@@ -22,15 +22,15 @@
             <div>Role: {{user.role}}</div>
             <div class="col-md-3">
                 <form action="http://127.0.0.1:5000/user/panel" method="POST">
-                    <select class="form-select" id="validationCustom04" name="role" required style="width: 120%">
+                    <select class="form-select" id="user-id-{{ user.id }}" name="role" required style="width: 140%">
                         <option selected disabled value="">{{ user.role }}</option>
                         <option>user</option>
                         <option>admin</option>
                     </select>
                     <div>
                         <input type="hidden" class="form-control" name="id" value={{ user.id }}>
-                        <input class="btn btn-primary" type="submit" value="Set user role"
-                               style="background-color:green">
+                        <button class="btn btn-primary" id="role-id-{{ user.id }}" type="submit"
+                                style="background-color:green; width:140%">Set user role</button>
                     </div>
                 </form>
             </div>
