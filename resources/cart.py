@@ -31,7 +31,7 @@ class Cart(MethodView):
             flash(f"Successful added to your cart")
             return redirect(url_for("books.HomePage"))
         else:
-            return redirect(url_for("users.login"))
+            return redirect(url_for("users.Login"))
 
 
 @blp.route("/cart/delete")

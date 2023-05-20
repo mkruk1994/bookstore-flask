@@ -28,7 +28,7 @@ class CreateUser(MethodView):
             return redirect(url_for("users.CreateUser"))
         else:
             try:
-                user = UserModel(login=login, password=password, role="user")
+                user = UserModel(login=request.form["login"], password=password, role="user")
                 db.session.add(user)
                 db.session.commit()
                 return render_template("login.html")
@@ -53,9 +53,12 @@ class UsersOperations(MethodView):
         return redirect(url_for("users.UsersOperations"))
 
 
-@blp.route("/login", methods=["GET", "POST"])
-def login():
-    if request.method == "POST":
+@blp.route("/login")
+class Login(MethodView):
+    def get(self):
+        return render_template("login.html")
+
+    def post(self):
         login = request.form["login"]
         pwd = request.form["password"]
         user = UserModel.query.filter_by(login=login).first()
@@ -69,12 +72,20 @@ def login():
             else:
                 flash("Login or password incorrect try again", "info")
                 return render_template("login.html")
-    else:
-        if "user" in session:
+        elif "user" in session:
             flash(f"Already logged in")
             login = session["user"]
             return render_template("user.html", user=login)
-        return render_template("login.html")
+        else:
+            flash("Login or password incorrect try again", "info")
+            return render_template("login.html")
+
+#    else:
+#        if "user" in session:
+#            flash(f"Already logged in")
+#            login = session["user"]
+#            return render_template("user.html", user=login)
+#        return render_template("login.html")
 
 
 @blp.route("/logout")

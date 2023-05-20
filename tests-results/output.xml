@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.0 on win32)" generated="20230520 16:13:37.259" rpa="false" schemaversion="3">
+<suite id="s1" name="User" source="C:\Users\Marek\PycharmProjects\bookstore-rest\tests\user.robot">
+<test id="s1-t1" name="Should be able to login with valid user account" line="15">
+<kw name="Begin web test" library="user">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://127.0.0.1:5000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230520 16:13:37.565" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:5000'.</msg>
+<status status="PASS" starttime="20230520 16:13:37.564" endtime="20230520 16:13:39.231"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230520 16:13:39.231" endtime="20230520 16:13:39.352"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Flask application</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230520 16:13:39.352" endtime="20230520 16:13:39.369"/>
+</kw>
+<status status="PASS" starttime="20230520 16:13:37.564" endtime="20230520 16:13:39.369"/>
+</kw>
+<kw name="Go to login page" library="user">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Login</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230520 16:13:39.370" level="INFO">Clicking link 'Login'.</msg>
+<status status="PASS" starttime="20230520 16:13:39.370" endtime="20230520 16:13:39.521"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Password</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230520 16:13:39.522" endtime="20230520 16:13:39.547"/>
+</kw>
+<status status="PASS" starttime="20230520 16:13:39.369" endtime="20230520 16:13:39.548"/>
+</kw>
+<kw name="Use valid account data" library="user">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=login</arg>
+<arg>admin</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230520 16:13:39.549" level="INFO">Typing text 'admin' into text field 'name=login'.</msg>
+<status status="PASS" starttime="20230520 16:13:39.548" endtime="20230520 16:13:39.667"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=password</arg>
+<arg>admin</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230520 16:13:39.668" level="INFO">Typing text 'admin' into text field 'name=password'.</msg>
+<status status="PASS" starttime="20230520 16:13:39.667" endtime="20230520 16:13:39.748"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Login</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230520 16:13:39.749" level="INFO">Clicking button 'Login'.</msg>
+<status status="PASS" starttime="20230520 16:13:39.748" endtime="20230520 16:13:39.846"/>
+</kw>
+<status status="PASS" starttime="20230520 16:13:39.548" endtime="20230520 16:13:39.846"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230520 16:13:42.849" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230520 16:13:39.847" endtime="20230520 16:13:42.849"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Successful logged in!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230520 16:13:42.869" level="INFO">Current page contains text 'Successful logged in!'.</msg>
+<status status="PASS" starttime="20230520 16:13:42.850" endtime="20230520 16:13:42.869"/>
+</kw>
+<kw name="End test" library="user">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230520 16:13:42.870" endtime="20230520 16:13:45.105"/>
+</kw>
+<status status="PASS" starttime="20230520 16:13:42.870" endtime="20230520 16:13:45.105"/>
+</kw>
+<tag>1001</tag>
+<tag>Login</tag>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20230520 16:13:37.563" endtime="20230520 16:13:45.106"/>
+</test>
+<test id="s1-t2" name="Should not be able to login with invalid user account" line="23">
+<kw name="Begin web test" library="user">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://127.0.0.1:5000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230520 16:13:45.109" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:5000'.</msg>
+<status status="PASS" starttime="20230520 16:13:45.109" endtime="20230520 16:13:46.828"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230520 16:13:46.828" endtime="20230520 16:13:46.962"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Flask application</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230520 16:13:46.962" endtime="20230520 16:13:46.978"/>
+</kw>
+<status status="PASS" starttime="20230520 16:13:45.109" endtime="20230520 16:13:46.978"/>
+</kw>
+<kw name="Go to login page" library="user">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Login</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230520 16:13:46.979" level="INFO">Clicking link 'Login'.</msg>
+<status status="PASS" starttime="20230520 16:13:46.978" endtime="20230520 16:13:47.131"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Password</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230520 16:13:47.131" endtime="20230520 16:13:47.148"/>
+</kw>
+<status status="PASS" starttime="20230520 16:13:46.978" endtime="20230520 16:13:47.149"/>
+</kw>
+<kw name="Use invalid account data" library="user">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=login</arg>
+<arg>admin2</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230520 16:13:47.150" level="INFO">Typing text 'admin2' into text field 'name=login'.</msg>
+<status status="PASS" starttime="20230520 16:13:47.149" endtime="20230520 16:13:47.267"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=password</arg>
+<arg>admin2</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230520 16:13:47.267" level="INFO">Typing text 'admin2' into text field 'name=password'.</msg>
+<status status="PASS" starttime="20230520 16:13:47.267" endtime="20230520 16:13:47.352"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Login</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230520 16:13:47.352" level="INFO">Clicking button 'Login'.</msg>
+<status status="PASS" starttime="20230520 16:13:47.352" endtime="20230520 16:13:47.450"/>
+</kw>
+<status status="PASS" starttime="20230520 16:13:47.149" endtime="20230520 16:13:47.451"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Login or password incorrect try again</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230520 16:13:47.478" level="INFO">Current page contains text 'Login or password incorrect try again'.</msg>
+<status status="PASS" starttime="20230520 16:13:47.452" endtime="20230520 16:13:47.478"/>
+</kw>
+<kw name="End test" library="user">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230520 16:13:47.479" endtime="20230520 16:13:49.655"/>
+</kw>
+<status status="PASS" starttime="20230520 16:13:47.479" endtime="20230520 16:13:49.655"/>
+</kw>
+<tag>1002</tag>
+<tag>Login</tag>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20230520 16:13:45.108" endtime="20230520 16:13:49.656"/>
+</test>
+<status status="PASS" starttime="20230520 16:13:37.261" endtime="20230520 16:13:49.658"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">1001</stat>
+<stat pass="1" fail="0" skip="0">1002</stat>
+<stat pass="2" fail="0" skip="0">Login</stat>
+<stat pass="2" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="User">User</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
