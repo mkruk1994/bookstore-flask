@@ -40,7 +40,7 @@
             <form action="http://127.0.0.1:5000/user/delete" method="POST">
                 <div>
                     <input type="hidden" class="form-control" name="id" value={{ user.id }}>
-                    <input class="btn btn-primary" type="submit" value="Delete user" style="background-color:red">
+                    <input class="btn btn-primary" type="submit" value="Delete user" style="background-color:red" id="btn-id-{{ user.id }}">
                 </div>
             </form>
         </td>

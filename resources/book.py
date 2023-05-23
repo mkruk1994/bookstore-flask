@@ -14,7 +14,8 @@ class BookCreate(MethodView):
         return render_template("create_book.html")
 
     def post(self):
-        if len(request.form["title"]) == 0 or len(request.form["author"]) == 0 or len(request.form["genre"]) == 0:
+        if len(request.form["title"]) == 0 or len(request.form["author"]) == 0 or len(request.form["genre"]) == 0\
+                or len(request.form["cover"]) == 0 or len(request.form["description"]) == 0:
             flash(f"All fields have to be filled up")
             return render_template("create_book.html")
         try:
@@ -59,7 +60,7 @@ class BookUpdate(MethodView):
         cover = request.form["cover"]
         description = request.form["description"]
         if len(title) == 0 or len(author) == 0 or len(genre) == 0:
-            flash(flash(f"All fields have to be filled up"))
+            flash(f"All fields have to be filled up")
             return render_template("books_operations.html")
         else:
             book = BookModel.query.filter_by(id=id).first()

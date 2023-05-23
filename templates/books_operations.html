@@ -25,14 +25,14 @@
                 <div>
                     <input type="hidden" class="form-control" name="id" value={{ book.id }}>
                     <input class="btn btn-primary" type="submit" value="Update"
-                           style="margin-top:10%; background-color: orange">
+                           style="margin-top:10%; background-color: orange" id="update-book-{{ book.id }}">
                 </div>
             </form>
             <form action="http://127.0.0.1:5000/book/delete" method="POST">
                 <div>
                     <input type="hidden" class="form-control" name="id" value={{ book.id }}>
                     <input class="btn btn-primary" type="submit" value="Delete"
-                           style="margin-top:10%; background-color:red">
+                           style="margin-top:10%; background-color:red" id="delete-book-{{ book.id }}">
                 </div>
             </form>
         </td>

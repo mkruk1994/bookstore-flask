@@ -31,6 +31,7 @@ class CreateUser(MethodView):
                 user = UserModel(login=request.form["login"], password=password, role="user")
                 db.session.add(user)
                 db.session.commit()
+                flash(f"Successful created an account")
                 return render_template("login.html")
             except SQLAlchemyError:
                 flash("An error occurred while inserting a user, try again", "info")
