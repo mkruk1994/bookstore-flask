@@ -24,7 +24,7 @@
             <form action="http://127.0.0.1:5000/cart" method="POST">
                 <div>
                     <input type="hidden" class="form-control" name="id" value={{ book.id }}>
-                    <input class="btn btn-primary" type="submit" value="Add to cart" style="margin-top:50%">
+                    <input class="btn btn-primary" type="submit" value="Add to cart" style="margin-top:50%" id="book-id-{{ book.id }}">
                 </div>
             </form>
         </td>

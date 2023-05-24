@@ -50,6 +50,7 @@ Should be able to change user role to admin
     Use valid account data
     Go to users panel
     Change user role to admin
+    page should contain    Role has been changed
 
 Should be able to delete user account
     [Tags]    1008      Smoke       Administration
@@ -57,8 +58,7 @@ Should be able to delete user account
     Use valid account data
     Go to users panel
     Delete user account
-
-
+    page should contain    User has been deleted
 
 *** Keywords ***
 
@@ -67,5 +67,5 @@ Should be able to delete user account
 #Run the script
 #robot -d tests-results  tests/user.robot
 #Run all scripts by directory
-#robot -d results -N "Full Regression" tests
+#robot -d tests-results -N "Full Regression" tests
 *** Variables ***

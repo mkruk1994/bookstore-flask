@@ -82,3 +82,33 @@ Update book title with empty title field
     clear element text    name=title
     click button    Update book
 
+Update book author with empty author field
+    click button    update-book-5
+    clear element text    name=author
+    click button    Update book
+
+Update book genre with empty genre field
+    click button    update-book-5
+    clear element text    name=genre
+    click button    Update book
+
+Update book price with empty price field
+    click button    update-book-5
+    clear element text    name=price
+    click button    Update book
+
+Update book cover with empty cover field
+    click button    update-book-5
+    clear element text    name=cover
+    click button    Update book
+
+Update book description with empty description field
+    click button    update-book-5
+    clear element text    name=description
+    click button    Update book
+
+Delete book
+    wait until element is visible    id=delete-book-5
+    sleep     3s
+    click button    id=delete-book-5
+    sleep    3s

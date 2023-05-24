@@ -59,7 +59,7 @@ class BookUpdate(MethodView):
         price = request.form["price"]
         cover = request.form["cover"]
         description = request.form["description"]
-        if len(title) == 0 or len(author) == 0 or len(genre) == 0:
+        if len(title) == 0 or len(author) == 0 or len(genre) == 0 or len(cover) == 0 or len(description) == 0:
             flash(f"All fields have to be filled up")
             return render_template("books_operations.html")
         else:

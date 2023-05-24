@@ -25,7 +25,7 @@
             <form action="http://127.0.0.1:5000/cart/delete" method="POST">
                 <div>
                     <input type="hidden" class="form-control" name="id" value={{ book.id }}>
-                    <input class="btn btn-primary" type="submit" value="Remove from cart"
+                    <input class="btn btn-primary" type="submit" id="book-id-{{ book.id }}" value="Remove from cart "
                            style="margin-top:10%; background-color:red">
                 </div>
             </form>
