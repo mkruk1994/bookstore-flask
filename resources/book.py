@@ -72,7 +72,7 @@ class BookUpdate(MethodView):
             try:
                 book.price = price
                 db.session.commit()
-                flash(f"Book update successful")
+                flash(f"Book has been successful updated")
             except SQLAlchemyError:
                 flash("Price has to be a number")
             return redirect(url_for("books.BooksOperations"))

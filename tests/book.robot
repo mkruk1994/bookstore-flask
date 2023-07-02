@@ -14,6 +14,7 @@ Should be able to create new book
     Login to admin account
     Go to create book page
     Use valid book data
+    page should contain    Book successful created
 
 Should not be able to create new book with empty title field
     [Tags]    2002      Smoke       Books
@@ -62,6 +63,7 @@ Should be able to update book title
     Login to admin account
     Go to Update/delete books page
     Update book title with valid data
+    page should contain    Book has been successful updated
 
 Should not be able to update book with empty title field
     [Tags]    2009      Smoke       Books Update
